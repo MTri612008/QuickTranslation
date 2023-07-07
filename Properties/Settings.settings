@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QuicklyTranslate.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Save" Type="System.String" Scope="User">
+      <Value Profile="(Default)">btnShow</Value>
+    </Setting>
+    <Setting Name="SaveLocationX" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">960</Value>
+    </Setting>
+    <Setting Name="SaveLocationY" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">540</Value>
+    </Setting>
+    <Setting Name="PathSave" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
