@@ -6,11 +6,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,37 +27,44 @@ namespace QuicklyTranslate
         String TranslateText;
         String ReadImgText;
         string path = Settings.Default["PathSave"].ToString();
-        static ScForm scForm;
+      public static ScForm scForm;
        public static OnScBtn OnScBtn = new OnScBtn();
+       // public static ScForm2 scForm2;
         String ValSave = Settings.Default["Save"].ToString();
        static int Show =0;
         String Hide;
         public static int TorF = 0;
        
+
         StreamWriter writer;
         StreamReader reader;
         public Form1()
         {
+
             InitializeComponent();
-            
+
             notifyIcon1.Text = "QuicklyTranslate";
             notifyIcon1.Visible = true;
             Console.WriteLine(ScForm.showForm);
             ImgTransForm.Hide();
-            if (ValSave == "btnShow") {
+            if (ValSave == "btnShow")
+            {
                 OnScBtn.Show();
             }
-            else if (ValSave == "btnHide") {
+            else if (ValSave == "btnHide")
+            {
                 OnScBtn.Hide();
             }
-
-            
-
         }
+       
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
+
+          
+
 
             chromiumWebBrowser1.Load("https://translate.google.com/?sl=en&tl=vi&text=" + TranslateText + "&op=translate");
           
@@ -251,10 +260,21 @@ namespace QuicklyTranslate
                
    
         }
-       
+        public static void ScreenSnip2()
+        {
+            Bitmap bit2;
+                Rectangle rect = Screen.PrimaryScreen.Bounds;
+                Bitmap bit = new Bitmap(HotKey.scForm2.scShootPanel.Width, HotKey.scForm2.scShootPanel.Height);
+                Graphics g;
+                g = Graphics.FromImage(bit);
+                g.CopyFromScreen(HotKey.scForm2.scShootPanel.Left, HotKey.scForm2.scShootPanel.Top, 0, 0, rect.Size);
+                Clipboard.SetImage(bit);
+                Show = 0;
+            
 
-      
-        private void ShowscSnip_Click(object sender, EventArgs e)
+        }
+
+            private void ShowscSnip_Click(object sender, EventArgs e)
         {
             Show = 1;
             if (this.WindowState == FormWindowState.Normal)
