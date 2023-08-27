@@ -25,6 +25,7 @@ namespace QuicklyTranslate
             InitializeComponent();
             this.BackColor = Color.LimeGreen;
              this.TransparencyKey = Color.LimeGreen;
+            
         }
 
         private void OnScBtn_Load(object sender, EventArgs e)
@@ -82,6 +83,12 @@ namespace QuicklyTranslate
 
 
             }
+            if (e.Button == MouseButtons.Middle) {
+                //SendKeys.Send("^" + "{c}");
+                Form1 form = new Form1();
+                form.HideBt.Visible = false;
+                form.Show();
+            }
         }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -92,9 +99,15 @@ namespace QuicklyTranslate
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
+            
             Form1 form = new Form1();
             form.HideBt.Visible = false;
             form.Show();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            SendKeys.Send("^" + "{c}");
         }
     }
 }

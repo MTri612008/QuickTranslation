@@ -38,9 +38,9 @@
             this.MinisizeBT = new System.Windows.Forms.Button();
             this.ImgTransForm = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chromiumWebBrowser2 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.label1 = new System.Windows.Forms.Label();
             this.ImgPanel = new System.Windows.Forms.Panel();
+            this.chromiumWebBrowser2 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.ShowscSnip = new System.Windows.Forms.Button();
             this.HideBt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -129,7 +129,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ImgTransForm.Controls.Add(this.panel2);
-            this.ImgTransForm.Controls.Add(this.chromiumWebBrowser2);
             this.ImgTransForm.Controls.Add(this.label1);
             this.ImgTransForm.Controls.Add(this.ImgPanel);
             this.ImgTransForm.Location = new System.Drawing.Point(1, 42);
@@ -144,15 +143,6 @@
             this.panel2.Size = new System.Drawing.Size(285, 55);
             this.panel2.TabIndex = 5;
             this.panel2.Visible = false;
-            // 
-            // chromiumWebBrowser2
-            // 
-            this.chromiumWebBrowser2.ActivateBrowserOnCreation = false;
-            this.chromiumWebBrowser2.Location = new System.Drawing.Point(471, 31);
-            this.chromiumWebBrowser2.Name = "chromiumWebBrowser2";
-            this.chromiumWebBrowser2.Size = new System.Drawing.Size(750, 603);
-            this.chromiumWebBrowser2.TabIndex = 4;
-            this.chromiumWebBrowser2.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser2_LoadingStateChanged);
             // 
             // label1
             // 
@@ -174,6 +164,15 @@
             this.ImgPanel.Name = "ImgPanel";
             this.ImgPanel.Size = new System.Drawing.Size(454, 603);
             this.ImgPanel.TabIndex = 0;
+            // 
+            // chromiumWebBrowser2
+            // 
+            this.chromiumWebBrowser2.ActivateBrowserOnCreation = false;
+            this.chromiumWebBrowser2.Location = new System.Drawing.Point(471, 31);
+            this.chromiumWebBrowser2.Name = "chromiumWebBrowser2";
+            this.chromiumWebBrowser2.Size = new System.Drawing.Size(750, 603);
+            this.chromiumWebBrowser2.TabIndex = 4;
+            this.chromiumWebBrowser2.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser2_LoadingStateChanged);
             // 
             // ShowscSnip
             // 
@@ -309,10 +308,10 @@
             this.Controls.Add(this.ImgTransForm);
             this.Controls.Add(this.TextTranslateBT);
             this.Controls.Add(this.ImgTranslateBT);
-            this.Controls.Add(this.chromiumWebBrowser1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "ME may";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ImgTransForm.ResumeLayout(false);

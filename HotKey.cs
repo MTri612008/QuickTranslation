@@ -9,13 +9,23 @@ using System.Windows.Forms;
 
 namespace QuicklyTranslate
 {
-    internal class HotKey
+    internal class HotKey:Form
     {
         private static IntPtr _hookID = IntPtr.Zero;
         private const int WM_KEYDOWN = 0x0100;
         private const int WH_KEYBOARD_LL = 13;
         private static LowLevelKeyboardProc _proc = HookCallback;
         public static ScForm2 scForm2;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams @params = base.CreateParams;
+                @params.ExStyle |= 0x08000000;
+                return @params;
+            }
+        }
         public HotKey() {
             HookKeyboard();
         }
@@ -73,6 +83,7 @@ namespace QuicklyTranslate
             }
             if(previoursKey==Keys.LControlKey&&(Keys)(vkCode) == Keys.F2)
             {
+                SendKeys.Send("^" + "{c}");
                 Form1 form1 = new Form1();
                 form1.HideBt.Hide();
                 form1.TopMost = true;
@@ -99,5 +110,23 @@ namespace QuicklyTranslate
             }
         }
         private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // HotKey
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "HotKey";
+            this.Load += new System.EventHandler(this.HotKey_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void HotKey_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
